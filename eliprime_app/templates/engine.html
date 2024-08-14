@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <header>
+            <!-- place navbar here -->
+            <nav class="nav">
+              <div class="nav-left">
+                <a class="nav-item">
+                  <img src="_b4b159ee-3e75-456f-ad05-4a5ff82af575.jpeg" alt="Bulma logo">
+                </a>
+              </div>
+            
+              <div class="nav-center">
+                <a class="nav-item">
+                  <span class="icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                </a>
+                <a class="nav-item">
+                  <span class="icon">
+                    <i class="fa fa-twitter"></i>
+                  </span>
+                </a>
+              </div>
+            
+              <span class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            
+              <div class="nav-right nav-menu">
+                <a href="{% url 'home' %}" class="nav-item">
+                  Home
+                </a>
+                <a class="nav-item">
+                  Documentation
+                </a>
+                <a class="nav-item">
+                  Blog
+                </a>
+            
+                <span class="nav-item">
+                  <a class="button" >
+                    <span class="icon">
+                      <i class="fa fa-twitter"></i>
+                    </span>
+                    <span>Tweet</span>
+                  </a>
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-download"></i>
+                    </span>
+                    <span>Download</span>
+                  </a>
+                </span>
+              </div>
+            </nav>
+            
+        </header>
+<main>
+    <form method="POST" action="{% url 'diagnostic_form' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Get the nav-toggle and nav-menu elements
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      // Add click event listener to nav-toggle
+      navToggle.addEventListener('click', function () {
+          // Toggle the "is-active" class on nav-menu
+          navMenu.classList.toggle('is-active');
+      });
+  });
+</script>
+{% endblock %}

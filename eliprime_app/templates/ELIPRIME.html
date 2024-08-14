@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header>
+        <img id="logo" src="{% static 'images/Eli Prime.png' %}" alt="EliPrime Auto Prognosis Logo">
+        <h1>Welcome to EliPrime Auto Prognosis</h1>
+        <p>Where Precision Meets Predictive Technology</p>
+    </header>
+
+    <div class="container">
+        <h2>About Us</h2>
+        
+        <p>EliPrime Auto Prognosis is at the forefront of automotive diagnostic technology. With our cutting-edge algorithms and advanced machine learning techniques, we accurately predict and diagnose issues with cars, helping car owners and mechanics alike in maintaining their vehicles' performance and reliability.</p>
+        
+        <h2>How It Works</h2>
+        <p>Our proprietary system analyzes data from various sensors and diagnostic tools installed in your vehicle. It then processes this data using sophisticated algorithms to detect patterns and anomalies indicative of potential issues with the engine and other critical components.</p>
+        
+        <h2>Why Choose Us</h2>
+        <p>At EliPrime Auto Prognosis, we pride ourselves on our commitment to precision, reliability, and customer satisfaction. Our system is continuously updated and refined to ensure the highest level of accuracy in diagnosing car issues, providing you with peace of mind and confidence in your vehicle's health.</p>
+        
+        
+        <a href="{% url 'diagnostic_form' %}" class="button">Get Started</a>
+        
+    </div>
+{% endblock %}
